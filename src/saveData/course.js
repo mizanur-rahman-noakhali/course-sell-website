@@ -12,4 +12,6 @@ let course =[
   {"key":"11","name":"my sql",'price':"120"},
   {"key":"12","name":"java","price":"12"}
 
-]
+];
+
+export default course;
