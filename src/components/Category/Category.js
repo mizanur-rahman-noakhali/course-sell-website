@@ -2,13 +2,17 @@ import React, { useState } from 'react';
 import fakeData from '../../fakeData';
 import './Category.css';
 import UdemyBusiness from '../UdemyBusiness/UdemyBusiness';
+import Cart from '../Cart/Cart';
 
 const Category = () => {
   const first10=fakeData.slice(0,10);
   const [udemyBusinesses, setUdemyBusiness]=useState(first10);
+  const [cart,setCart]= useState([]);
 
   const handleAddProduct=(product)=>{
-    console.log("course Added",product);
+    
+    const newCart=[...cart,product];
+    setCart(newCart);
   }
   return (
     <div  className='udemyBusiness-container'>
@@ -25,7 +29,7 @@ const Category = () => {
       
      </div>
     <div className='cart-container'>
-         <h1>This is cart</h1>
+        <Cart cart={cart}></Cart>
     </div>
      
     </div>
